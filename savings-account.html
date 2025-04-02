@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Account Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Load GSAP first -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="light-mode">
+    <!-- Your HTML content remains the same -->
+    <div class="theme-toggle">
+        <button id="themeToggle"><i class="fas fa-moon"></i></button>
+    </div>
+
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> > Account
+        </nav>
+        <br>
+        <!-- Service Navigation Bar -->
+        <nav class="service-nav">
+            <ul>
+                <li class="nav-item active" data-section="savings">
+                    <i class="fas fa-piggy-bank"></i>
+                    <span>Savings</span>
+                </li>
+                <li class="nav-item" data-section="current">
+                    <i class="fas fa-landmark"></i>
+                    <span>Current</span>
+                </li>
+                <li class="nav-item" data-section="fd">
+                    <i class="fas fa-lock"></i>
+                    <span>Fixed Deposit</span>
+                </li>
+                <li class="nav-item" data-section="rd">
+                    <i class="fas fa-clock"></i>
+                    <span>Recurring Deposit</span>
+                </li>
+                <li class="nav-item" data-section="salary">
+                    <i class="fas fa-money-check-alt"></i>
+                    <span>Salary Account</span>
+                </li>
+                <li class="nav-item" data-section="nri">
+                    <i class="fas fa-globe"></i>
+                    <span>NRI Banking</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Service Sections Container -->
+        <div class="service-sections">
+            <!-- Existing Savings Account Section (wrap it in a div) -->
+            <div class="service-section active" id="savings">
+                <div class="service-detail">
+                    <header class="service-header">
+                        <i class="fas fa-piggy-bank"></i>
+                        <h1>Savings Account</h1>
+                    </header>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3><i class="fas fa-percentage"></i> High Interest Rates</h3>
+                            <p>Earn up to 7% p.a. on your savings</p>
+                            <ul>
+                                <li>Daily interest calculation</li>
+                                <li>Monthly interest credit</li>
+                                <li>Tiered interest rates based on balance</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-money-bill-wave"></i> Zero Fees</h3>
+                            <p>No maintenance or hidden charges</p>
+                            <ul>
+                                <li>No minimum balance requirement</li>
+                                <li>Free unlimited transactions</li>
+                                <li>Free debit card</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-mobile-alt"></i> Digital Banking</h3>
+                            <p>24/7 account access</p>
+                            <ul>
+                                <li>Mobile banking app</li>
+                                <li>Online bill payments</li>
+                                <li>UPI enabled</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="account-types">
+                        <br>
+                        <h2>Available Account Types</h2>
+                        <div class="account-grid">
+                            <div class="account-card">
+                                <h4>Basic Savings</h4>
+                                <p class="interest-rate">5% p.a.</p>
+                                <ul>
+                                    <li>Minimum balance: ₹1,000</li>
+                                    <li>Free virtual debit card</li>
+                                    <li>5 free ATM withdrawals</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Apply Now</button>
+                            </div>
+
+                            <div class="account-card premium">
+                                <h4>Premium Savings</h4>
+                                <p class="interest-rate">7% p.a.</p>
+                                <ul>
+                                    <li>Minimum balance: ₹10,000</li>
+                                    <li>Premium metal debit card</li>
+                                    <li>Unlimited ATM withdrawals</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Account Section -->
+            <div class="service-section" id="current">
+                <div class="service-detail">
+                    <header class="service-header">
+                        <i class="fas fa-landmark"></i>
+                        <h1>Current Account</h1>
+                    </header>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3><i class="fas fa-infinity"></i> Unlimited Transactions</h3>
+                            <p>No daily transaction limits</p>
+                            <ul>
+                                <li>Free RTGS/NEFT/IMPS</li>
+                                <li>Unlimited cash deposits</li>
+                                <li>No transaction fees</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-chart-line"></i> Business Tools</h3>
+                            <p>Enhanced business banking features</p>
+                            <ul>
+                                <li>Multi-user access</li>
+                                <li>Bulk payment facility</li>
+                                <li>API Banking integration</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-shield-alt"></i> Premium Services</h3>
+                            <p>Exclusive business benefits</p>
+                            <ul>
+                                <li>Dedicated RM</li>
+                                <li>Priority banking</li>
+                                <li>Business insurance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="account-types">
+                        <h2>Current Account Plans</h2>
+                        <div class="account-grid">
+                            <div class="account-card">
+                                <h4>Business Basic</h4>
+                                <p class="interest-rate">₹25,000</p>
+                                <p class="min-balance">Minimum Balance</p>
+                                <ul>
+                                    <li>Free checkbook</li>
+                                    <li>Business debit card</li>
+                                    <li>Monthly e-statement</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Apply Now</button>
+                            </div>
+
+                            <div class="account-card premium">
+                                <h4>Business Premium</h4>
+                                <p class="interest-rate">₹100,000</p>
+                                <p class="min-balance">Minimum Balance</p>
+                                <ul>
+                                    <li>Unlimited checkbook</li>
+                                    <li>Premium business credit card</li>
+                                    <li>Trade forex platform</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fixed Deposit Section -->
+            <div class="service-section" id="fd">
+                <div class="service-detail">
+                    <header class="service-header">
+                        <i class="fas fa-lock"></i>
+                        <h1>Fixed Deposit</h1>
+                    </header>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3><i class="fas fa-percentage"></i> High Returns</h3>
+                            <p>Up to 7.5% interest rate</p>
+                            <ul>
+                                <li>Flexible tenure options</li>
+                                <li>Quarterly interest payout</li>
+                                <li>Senior citizen benefits</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-shield-alt"></i> Secure Investment</h3>
+                            <p>Government insured deposits</p>
+                            <ul>
+                                <li>Zero risk investment</li>
+                                <li>Auto renewal facility</li>
+                                <li>Loan against FD</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-clock"></i> Flexible Terms</h3>
+                            <p>7 days to 10 years tenure</p>
+                            <ul>
+                                <li>Premature withdrawal</li>
+                                <li>Multiple payout options</li>
+                                <li>Tax saving FD</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="fd-calculator">
+                        <h3>FD Calculator</h3>
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label>Amount (₹)</label>
+                                <input type="number" id="fdAmount" min="1000">
+                            </div>
+                            <div class="form-group">
+                                <label>Tenure (Months)</label>
+                                <input type="number" id="fdTenure" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>Interest Rate (%)</label>
+                                <select id="fdRate">
+                                    <option value="6">6% - 6 months</option>
+                                    <option value="6.5">6.5% - 1 year</option>
+                                    <option value="7">7% - 2 years</option>
+                                    <option value="7.5">7.5% - 3 years</option>
+                                </select>
+                            </div>
+                            <button onclick="calculateFD()" class="calculate-btn">Calculate Returns</button>
+                        </div>
+                        <div id="fdResult" class="calculator-result"></div>
+                    </div>
+
+                    <div class="account-types">
+                        <h2>FD Plans</h2>
+                        <div class="account-grid">
+                            <div class="account-card">
+                                <h4>Regular FD</h4>
+                                <p class="interest-rate">Up to 7% p.a.</p>
+                                <ul>
+                                    <li>Min amount: ₹10,000</li>
+                                    <li>Tenure: 7 days to 10 years</li>
+                                    <li>Quarterly interest payout</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Open FD</button>
+                            </div>
+
+                            <div class="account-card premium">
+                                <h4>Tax Saver FD</h4>
+                                <p class="interest-rate">Up to 7.5% p.a.</p>
+                                <ul>
+                                    <li>Tax benefit under 80C</li>
+                                    <li>5 year lock-in period</li>
+                                    <li>Min amount: ₹10,000</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Open Tax Saver FD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recurring Deposit Section -->
+            <div class="service-section" id="rd">
+                <div class="service-detail">
+                    <header class="service-header">
+                        <i class="fas fa-clock"></i>
+                        <h1>Recurring Deposit</h1>
+                    </header>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3><i class="fas fa-calendar-check"></i> Flexible Savings</h3>
+                            <p>Start with just ₹500 monthly</p>
+                            <ul>
+                                <li>Auto-debit facility</li>
+                                <li>Flexible tenure</li>
+                                <li>Monthly deposits</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-percentage"></i> Competitive Returns</h3>
+                            <p>Up to 7% interest rate</p>
+                            <ul>
+                                <li>Compound interest benefits</li>
+                                <li>Monthly interest calculation</li>
+                                <li>Higher senior citizen rates</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-piggy-bank"></i> Goal-based Saving</h3>
+                            <p>Perfect for planned expenses</p>
+                            <ul>
+                                <li>Education planning</li>
+                                <li>Wedding planning</li>
+                                <li>Vacation planning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="rd-calculator">
+                        <h3>RD Calculator</h3>
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label>Monthly Deposit (₹)</label>
+                                <input type="number" id="rdAmount" min="500">
+                            </div>
+                            <div class="form-group">
+                                <label>Tenure (Years)</label>
+                                <select id="rdTenure">
+                                    <option value="1">1 Year</option>
+                                    <option value="2">2 Years</option>
+                                    <option value="3">3 Years</option>
+                                    <option value="5">5 Years</option>
+                                    <option value="10">10 Years</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Interest Rate (%)</label>
+                                <input type="number" id="rdRate" value="7" step="0.1">
+                            </div>
+                            <button onclick="calculateRD()" class="calculate-btn">Calculate Returns</button>
+                        </div>
+                        <div id="rdResult" class="calculator-result"></div>
+                    </div>
+
+                    <div class="account-types">
+                        <h2>RD Plans</h2>
+                        <div class="account-grid">
+                            <div class="account-card">
+                                <h4>Regular RD</h4>
+                                <p class="interest-rate">7% p.a.</p>
+                                <ul>
+                                    <li>Min deposit: ₹500/month</li>
+                                    <li>Tenure: 6 months - 10 years</li>
+                                    <li>Flexible payment dates</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Open RD</button>
+                            </div>
+
+                            <div class="account-card premium">
+                                <h4>Senior Citizen RD</h4>
+                                <p class="interest-rate">7.5% p.a.</p>
+                                <ul>
+                                    <li>Additional 0.5% interest</li>
+                                    <li>Special benefits</li>
+                                    <li>Priority service</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Open Senior RD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salary Account Section -->
+            <div class="service-section" id="salary">
+                <div class="service-detail">
+                    <header class="service-header">
+                        <i class="fas fa-money-check-alt"></i>
+                        <h1>Salary Account</h1>
+                    </header>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3><i class="fas fa-gift"></i> Zero Balance</h3>
+                            <p>No minimum balance required</p>
+                            <ul>
+                                <li>Free unlimited transactions</li>
+                                <li>Free debit card</li>
+                                <li>Free checkbook</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-percentage"></i> Special Benefits</h3>
+                            <p>Exclusive salary account perks</p>
+                            <ul>
+                                <li>Higher interest rates</li>
+                                <li>Free insurance cover</li>
+                                <li>Overdraft facility</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-credit-card"></i> Lifestyle Benefits</h3>
+                            <p>Premium lifestyle privileges</p>
+                            <ul>
+                                <li>Movie ticket discounts</li>
+                                <li>Dining privileges</li>
+                                <li>Shopping rewards</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="account-types">
+                        <h2>Salary Account Types</h2>
+                        <div class="account-grid">
+                            <div class="account-card">
+                                <h4>Classic Salary</h4>
+                                <p class="interest-rate">4% p.a.</p>
+                                <ul>
+                                    <li>Zero balance account</li>
+                                    <li>Free virtual debit card</li>
+                                    <li>Basic insurance cover</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Apply Now</button>
+                            </div>
+
+                            <div class="account-card premium">
+                                <h4>Premium Salary</h4>
+                                <p class="interest-rate">6% p.a.</p>
+                                <ul>
+                                    <li>Higher transaction limits</li>
+                                    <li>Premium credit card</li>
+                                    <li>Enhanced insurance cover</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Apply Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NRI Banking Section -->
+            <div class="service-section" id="nri">
+                <div class="service-detail">
+                    <header class="service-header">
+                        <i class="fas fa-globe"></i>
+                        <h1>NRI Banking</h1>
+                    </header>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3><i class="fas fa-university"></i> NRI Accounts</h3>
+                            <p>Specialized accounts for NRIs</p>
+                            <ul>
+                                <li>NRE Account</li>
+                                <li>NRO Account</li>
+                                <li>FCNR Deposits</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-exchange-alt"></i> Forex Services</h3>
+                            <p>Competitive exchange rates</p>
+                            <ul>
+                                <li>Online remittance</li>
+                                <li>Wire transfers</li>
+                                <li>Currency exchange</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-home"></i> Investment Options</h3>
+                            <p>Diverse investment portfolio</p>
+                            <ul>
+                                <li>Property investment</li>
+                                <li>Portfolio investment</li>
+                                <li>Mutual funds</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="account-types">
+                        <h2>NRI Account Types</h2>
+                        <div class="account-grid">
+                            <div class="account-card">
+                                <h4>NRE Account</h4>
+                                <p class="interest-rate">6% p.a.</p>
+                                <ul>
+                                    <li>Fully repatriable</li>
+                                    <li>Tax-free interest</li>
+                                    <li>Multi-currency transactions</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Open NRE Account</button>
+                            </div>
+
+                            <div class="account-card premium">
+                                <h4>FCNR Deposit</h4>
+                                <p class="interest-rate">Up to 7% p.a.</p>
+                                <ul>
+                                    <li>Fixed deposits in foreign currency</li>
+                                    <li>Multiple currency options</li>
+                                    <li>Hedge against currency fluctuation</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <button class="apply-btn">Open FCNR Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Move your custom script after GSAP -->
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Set initial styles for animation
+            gsap.set('.service-header, .feature-card, .account-card, .apply-btn', {
+                opacity: 0,
+                y: 50
+            });
+            
+            // Animate service header
+            gsap.to('.service-header', {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out"
+            });
+            
+            // Animate feature cards with stagger
+            gsap.to('.feature-card', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                delay: 0.3,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: '.features-grid',
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+            
+            // Animate account cards with scroll trigger
+            gsap.to('.account-card', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "elastic.out(1, 0.5)",
+                scrollTrigger: {
+                    trigger: '.account-grid',
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+            
+            // Animate buttons
+            
+            
+            const tl = gsap.timeline();
+        tl.from(".service-header", {
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out"
+        })
+        .from(".service-header i", {
+            scale: 0,
+            rotation: 360,
+            duration: 0.8
+        }, "-=0.5")
+
+        
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.feature-card, .account-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        duration: 0.3,
+                        y: -5,
+                        scale: 1.02,
+                        boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
+                        ease: "power2.out"
+                    });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        duration: 0.3,
+                        y: 0,
+                        scale: 1,
+                        boxShadow: "0 5px 15px rgba(0,0,0,0.05)",
+                        ease: "power2.out"
+                    });
+                });
+            });
+        });
+
+        // Service Navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.service-section');
+
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove active class from all items
+            navItems.forEach(nav => nav.classList.remove('active'));
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Add active class to clicked item
+            item.classList.add('active');
+            const sectionId = item.getAttribute('data-section');
+            document.getElementById(sectionId).classList.add('active');
+
+            // Animate new section
+            gsap.from(`#${sectionId} .service-header`, {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+
+            gsap.from(`#${sectionId} .feature-card`, {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power2.out"
+            });
+        });
+    });
+
+    // FD Calculator
+    window.calculateFD = function() {
+        const amount = parseFloat(document.getElementById('fdAmount').value);
+        const tenure = parseFloat(document.getElementById('fdTenure').value);
+        const rate = parseFloat(document.getElementById('fdRate').value);
+
+        if (amount && tenure && rate) {
+            const interest = (amount * rate * tenure) / (12 * 100);
+            const maturityAmount = amount + interest;
+
+            const resultDiv = document.getElementById('fdResult');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <h4>Maturity Details</h4>
+                <p>Principal Amount: ₹${amount.toLocaleString()}</p>
+                <p>Interest Earned: ₹${interest.toLocaleString()}</p>
+                <p>Maturity Amount: ₹${maturityAmount.toLocaleString()}</p>
+            `;
+
+            // Animate result
+            gsap.from(resultDiv, {
+                opacity: 0,
+                y: 20,
+                duration: 0.2,
+                ease: "power2.out"
+            });
+        }
+    };
+
+    // RD Calculator
+    window.calculateRD = function() {
+        const monthlyAmount = parseFloat(document.getElementById('rdAmount').value);
+        const years = parseFloat(document.getElementById('rdTenure').value);
+        const rate = parseFloat(document.getElementById('rdRate').value);
+
+        if (monthlyAmount && years && rate) {
+            const months = years * 12;
+            const monthlyRate = rate / 12 / 100;
+            const maturityAmount = monthlyAmount * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+            const totalDeposit = monthlyAmount * months;
+            const interestEarned = maturityAmount - totalDeposit;
+
+            const resultDiv = document.getElementById('rdResult');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <h4>Maturity Details</h4>
+                <p>Total Investment: ₹${totalDeposit.toLocaleString()}</p>
+                <p>Interest Earned: ₹${interestEarned.toLocaleString()}</p>
+                <p>Maturity Amount: ₹${maturityAmount.toLocaleString()}</p>
+            `;
+
+            // Animate result
+            gsap.from(resultDiv, {
+                opacity: 0,
+                y: 20,
+                duration: 0.2,
+                ease: "power2.out"
+            });
+        }
+    };
+});
+
+// RD Calculator
+window.calculateRD = function() {
+    const monthlyAmount = parseFloat(document.getElementById('rdAmount').value);
+    const years = parseFloat(document.getElementById('rdTenure').value);
+    const rate = parseFloat(document.getElementById('rdRate').value);
+
+    if (monthlyAmount && years && rate) {
+        const months = years * 12;
+        const monthlyRate = rate / 12 / 100;
+        const maturityAmount = monthlyAmount * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+        const totalDeposit = monthlyAmount * months;
+        const interestEarned = maturityAmount - totalDeposit;
+
+        const resultDiv = document.getElementById('rdResult');
+        resultDiv.style.display = 'block';
+        resultDiv.innerHTML = `
+            <h4>Maturity Details</h4>
+            <p>Total Investment: ₹${totalDeposit.toLocaleString()}</p>
+            <p>Interest Earned: ₹${interestEarned.toLocaleString()}</p>
+            <p>Maturity Amount: ₹${maturityAmount.toLocaleString()}</p>
+        `;
+
+        // Animate result
+        gsap.from(resultDiv, {
+            opacity: 0,
+            y: 20,
+            duration: 0.5,
+            ease: "power2.out"
+        });
+    }
+};
+// GSAP Animations for Apply Buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial button states
+    gsap.set('.apply-btn', {
+        scale: 1,
+        opacity: 0,
+        y: 20
+    });
+
+    // Animate buttons on page load
+    gsap.to('.apply-btn', {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "back.out(1.2)",
+        scrollTrigger: {
+            trigger: '.account-grid',
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
+    });
+
+    // Hover animations for all apply buttons
+    const applyButtons = document.querySelectorAll('.apply-btn');
+    
+    applyButtons.forEach(button => {
+        // Create hover animation timeline
+        const buttonTl = gsap.timeline({ paused: true });
+        
+        buttonTl
+            .to(button, {
+                scale: 1.05,
+                duration: 0.2,
+                backgroundColor: '#2980b9', // Lighter shade of blue
+                boxShadow: '0 5px 15px rgba(0,0,0,0.2)',
+                ease: "power2.out"
+            })
+            .to(button, {
+                y: -3,
+                duration: 0.1,
+                ease: "power2.out"
+            }, "-=0.2");
+
+        // Click animation
+        button.addEventListener('click', () => {
+            gsap.to(button, {
+                scale: 0.95,
+                duration: 0.1,
+                yoyo: true,
+                repeat: 1,
+                ease: "power2.inOut"
+            });
+
+            // Create ripple effect
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            button.appendChild(ripple);
+
+            gsap.to(ripple, {
+                scale: 2,
+                opacity: 0,
+                duration: 0.6,
+                ease: "power2.out",
+                onComplete: () => ripple.remove()
+            });
+        });
+
+        // Mouse enter/leave events
+        button.addEventListener('mouseenter', () => buttonTl.play());
+        button.addEventListener('mouseleave', () => buttonTl.reverse());
+
+        // Add focus animations for accessibility
+        button.addEventListener('focus', () => {
+            gsap.to(button, {
+                scale: 1.05,
+                duration: 0.2,
+                boxShadow: '0 0 0 3px rgba(52, 152, 219, 0.4)',
+                ease: "power2.out"
+            });
+        });
+
+        button.addEventListener('blur', () => {
+            gsap.to(button, {
+                scale: 1,
+                duration: 0.2,
+                boxShadow: 'none',
+                ease: "power2.out"
+            });
+        });
+    });
+});
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

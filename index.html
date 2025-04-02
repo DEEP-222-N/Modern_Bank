@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Banking Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <div class="theme-toggle">
+        <button id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div id="loginPage" class="container">
+        <div class="login-form">
+            <h2>Welcome to ModernBank</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+    </div>
+
+    <div id="dashboard" class="container hidden">
+        <nav class="sidebar">
+            <div class="user-profile">
+                <img src="./vector-users-icon.jpg" alt="User" height="50px" width="50px"  width="50px"    >
+                <span>Welcome, User</span>
+            </div>
+            <ul>
+                <li class="active"><i class="fas fa-home"></i> Dashboard</li>
+                <li><i class="fas fa-money-bill-transfer"></i> Transfer Money</li>
+                <li><i class="fas fa-exchange-alt"></i> Currency Converter</li>
+                <li><i class="fas fa-info-circle"></i> Banking Services</li>
+                <li><i class="fas fa-headset"></i> Contact Us</li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="dashboard-section">
+                <div class="balance-card">
+                    <h3>Current Balance</h3>
+                    <h2>$45,678.90</h2>
+                </div>
+
+                <div class="transactions">
+                    <h3>Recent Transactions</h3>
+                    <div class="transaction-list">
+                        <!-- Transactions will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="transfer-money-section hidden">
+                <h3><i class="fas fa-money-bill-wave"></i> Transfer Money</h3>
+                <div class="transfer-container">
+                    <div class="from-account-section">
+                        <h4>From Account</h4>
+                        <select id="fromAccount">
+                            <option value="savings">Savings Account - XXXX1234</option>
+                            <option value="current">Current Account - XXXX5678</option>
+                        </select>
+                        <div class="balance-info">Available Balance: ₹45,678.90</div>
+                    </div>
+                    <div class="transfer-form">
+                        <div class="form-group">
+                            <label>Transfer Type</label>
+                            <select id="transferType">
+                                <option value="">Select Transfer Type</option>
+                                <option value="imps">IMPS - Instant Transfer (24x7)</option>
+                                <option value="neft">NEFT - Regular Transfer (24x7)</option>
+                                <option value="rtgs">RTGS - Large Transfer (24x7, min ₹2 lakhs)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Beneficiary Name</label>
+                            <input type="text" id="beneficiaryName" placeholder="Enter beneficiary name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Account Number</label>
+                            <input type="text" id="accountNumber" placeholder="Enter account number" maxlength="16" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Re-enter Account Number</label>
+                            <input type="text" id="confirmAccountNumber" placeholder="Re-enter account number" maxlength="16" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>IFSC Code</label>
+                            <input type="text" id="ifscCode" placeholder="Enter IFSC code" maxlength="11" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Bank Name</label>
+                            <input type="text" id="bankName" placeholder="Bank name" >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Branch Name</label>
+                            <input type="text" id="branchName" placeholder="Branch name" >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Amount (₹)</label>
+                            <input type="number" id="transferAmount" placeholder="Enter amount" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Remarks (Optional)</label>
+                            <textarea id="transferRemarks" placeholder="Add remarks"></textarea>
+                        </div>
+
+                        <button onclick="initiateTransfer()" class="transfer-btn">Transfer Money</button>
+                        <div id="transferStatus"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+
+            <div class="currency-converter hidden">
+                <h3>Currency Converter</h3>
+                <div class="converter-wrapper">
+                    <form>
+                        <div class="amount">
+                            <p>Enter Amount</p>
+                            <input type="text" value="1">
+                        </div>
+                        <div class="drop-list">
+                            <div class="from">
+                                <p>From</p>
+                                <div class="select-box">
+                                    <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                                    <select></select>
+                                </div>
+                            </div>
+                            <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                            <div class="to">
+                                <p>To</p>
+                                <div class="select-box">
+                                    <img src="https://flagcdn.com/48x36/eu.png" alt="flag">
+                                    <select></select>
+                                </div>
+                            </div>
+                        </div>
+                        <button>Get Exchange Rate</button>
+                        <div class="exchange-rate">Getting exchange rate...</div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="banking-services hidden">
+                <h3>Our Banking Services</h3>
+                <div class="services-grid">
+                    <a href="savings-account.html" target="_main">
+                    <div class="service-card">
+                        
+                        <i class="fas fa-piggy-bank"></i>
+                        <h4>Account</h4>
+                        <p>Many High-interest accounts with zero maintenance fees</p>
+                        
+                    </div>
+                    </a>
+                    <a href="loans.html" target="_main">
+                    <div class="service-card">
+                        
+                        <i class="fas fa-home"></i>
+                        <h4>Loans</h4>
+                        <p>Competitive interest rates starting from 3.5% p.a.</p>
+                       
+                    </div>
+                    </a>
+                    <a href="credit-cards.html" target="_main">
+                    <div class="service-card">
+                        
+                        <i class="fas fa-credit-card"></i>
+                        <h4>Credit Cards</h4>
+                        <p>Rewards and cashback on every purchase</p>
+                       
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-section hidden">
+                <h3><i class="fas fa-headset"></i> Contact Us</h3>
+                <div class="contact-container">
+                    <!-- Quick Contact Cards -->
+                    <div class="quick-contact">
+                        <div class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <h4>24/7 Support</h4>
+                            <p>1800-123-4567</p>
+                            <a href="tel:18001234567" class="contact-btn">Call Now</a>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email Support</h4>
+                            <p>support@modernbank.com</p>
+                            <a href="mailto:support@modernbank.com" class="contact-btn">Send Email</a>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h4>Send us a Message</h4>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" id="contactName" placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" id="contactEmail" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mobile Number</label>
+                                    <input type="tel" id="contactPhone" placeholder="Enter mobile number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Account Number (Optional)</label>
+                                <input type="text" id="contactAccount" placeholder="Enter account number">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Query Type</label>
+                                <select id="queryType" required>
+                                    <option value="">Select Query Type</option>
+                                    <option value="account">Account Related</option>
+                                    <option value="transaction">Transaction Issue</option>
+                                    <option value="card">Card Related</option>
+                                    <option value="loan">Loan Enquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea id="contactMessage" placeholder="Type your message here..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn" onclick="submitContactForm(event)">Send Message</button>
+                            <div id="contactStatus"></div>
+                        </form>
+                    </div>
+
+                    <!-- Branch Locator -->
+                    <div class="branch-locator">
+                        <h4><i class="fas fa-map-marker-alt"></i> Find Nearest Branch</h4>
+                        <div class="branch-search">
+                            <input type="text" placeholder="Enter your location or pin code">
+                            <button class="locate-btn"><i class="fas fa-search"></i> Find Branch</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+   
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
